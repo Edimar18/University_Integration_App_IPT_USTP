@@ -12,6 +12,8 @@ def home(request):
         'student_id': student_profile.student_id,
         'username': request.user.username,
         'email': request.user.email,
+        'course': student_profile.course,
+        'year_level': student_profile.year_level,
     }
     return render(request, 'student_app/home.html', context)
 
