@@ -1,0 +1,490 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HOME</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1152d4",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-slate-900 dark:text-slate-100 transition-colors duration-200"
+  >
+    <!-- Main Layout -->
+    <div class="relative flex h-full w-full flex-col overflow-x-hidden">
+      <!-- Navbar -->
+      <header
+        class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1e2532] px-4 py-3 shadow-sm md:px-10"
+      >
+        <div class="flex items-center gap-8">
+          <!-- Logo -->
+          <div class="flex items-center gap-3 text-primary dark:text-blue-400">
+            <span class="material-symbols-outlined text-3xl">school</span>
+            <h2
+              class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight"
+            >
+              AB Normal College
+            </h2>
+          </div>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-6">
+            <a
+              class="text-primary font-semibold text-sm leading-normal hover:text-blue-700 transition-colors"
+              href="#"
+              >Dashboard</a
+            >
+            <a
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors"
+              href="#"
+              >Academics</a
+            >
+            <a
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors"
+              href="#"
+              >Library</a
+            >
+            <a
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors"
+              href="#"
+              >Finance</a
+            >
+            <a
+              class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors"
+              href="#"
+              >Settings</a
+            >
+          </nav>
+        </div>
+        <div class="flex flex-1 justify-end gap-6 items-center">
+          <!-- Search Bar -->
+          <div
+            class="hidden sm:flex w-full max-w-xs items-center rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2"
+          >
+            <span
+              class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[20px]"
+              >search</span
+            >
+            <input
+              class="w-full bg-transparent px-2 text-sm text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none"
+              placeholder="Search resources..."
+            />
+          </div>
+          <!-- User Profile -->
+          <div
+            aria-label="User profile picture"
+            class="h-10 w-10 overflow-hidden rounded-full bg-slate-200 border-2 border-white shadow-sm dark:border-slate-700"
+            role="img"
+          >
+            <img
+              alt="Portrait of Alex Student"
+              class="h-full w-full object-cover"
+              data-alt="Portrait of Alex Student"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOrzV-hUVWJeqOMNbcknE3G8lc_H-7Nppn1ZsgOMgd6HRrHjzgilTmF6micrWdA953-FDu7-6cxhPqMhlpBEBC0AEz7niSQyUf4OBsy401OqwJ7ydgRqRb5GGjRtcTTRL_svATkGQ58qIPm_62D4balmBX0n055iw8kQ4YKhXwk_3221ntILtebq0Pp9X_P5AlVc1RnGvRsW7-rsmsK4DUmiDsuzMhv2Sldo9vshm8TrJ-90uC8jrpUoM-97lTi8-hrIkTozErNXBi"
+            />
+          </div>
+        </div>
+      </header>
+      <!-- Main Content Area -->
+      <main class="flex-1 px-4 py-8 md:px-10 lg:px-40">
+        <div class="mx-auto max-w-[1200px] flex flex-col gap-8">
+          <!-- Welcome Section -->
+          <div
+            class="flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6"
+          >
+            <div class="flex flex-col gap-2">
+              <h1
+                class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight"
+              >
+                Welcome back, {{username.capitalize}}!
+              </h1>
+              <p
+                class="text-slate-500 dark:text-slate-400 text-base font-normal"
+              >
+                Student ID: {{ student_id }} 
+                <span class="mx-2 text-slate-300">|</span> Email: {{ email }}
+              </p>
+            </div>
+            <form action="{% url 'logout'%}" method="post">
+              {% csrf_token %}
+              <button 
+                class="inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              >
+                Log Out
+              </button>
+            </form>
+          </div>
+          <!-- Dashboard Title -->
+          <div class="flex items-center gap-2">
+            <span
+              class="material-symbols-outlined text-primary dark:text-blue-400"
+              >dashboard</span
+            >
+            <h2 class="text-slate-900 dark:text-white text-2xl font-bold">
+              The Hub
+            </h2>
+          </div>
+          <!-- Dashboard Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Academic Profile Card -->
+            <div
+              class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1e2532] shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+            >
+              <div
+                class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700/50 p-5 bg-slate-50/50 dark:bg-white/5"
+              >
+                <h3 class="font-bold text-slate-900 dark:text-white">
+                  Academic Profile
+                </h3>
+                <span class="material-symbols-outlined text-slate-400"
+                  >person</span
+                >
+              </div>
+              <div class="p-5 flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="h-16 w-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xl font-bold text-primary dark:text-blue-400"
+                  >
+                    {{username|slice:":1"|upper}}
+                  </div>
+                  <div>
+                    <p class="text-lg font-bold text-slate-900 dark:text-white">
+                      {{username.capitalize}}
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      Class of 2025
+                    </p>
+                  </div>
+                </div>
+                <div class="space-y-2 pt-2">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500 dark:text-slate-400"
+                      >Major</span
+                    >
+                    <span class="font-medium text-slate-900 dark:text-white"
+                      >Computer Science</span
+                    >
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500 dark:text-slate-400">GPA</span>
+                    <span class="font-medium text-slate-900 dark:text-white"
+                      >3.8 / 4.0</span
+                    >
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-500 dark:text-slate-400"
+                      >Status</span
+                    >
+                    <span
+                      class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/30 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-400"
+                    >
+                      Active
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-auto border-t border-slate-100 dark:border-slate-700/50 bg-slate-50 dark:bg-white/5 p-3 text-center"
+              >
+                <a
+                  class="text-sm font-medium text-primary hover:underline"
+                  href="#"
+                  >View Transcript</a
+                >
+              </div>
+            </div>
+            <!-- Library Status Card (High Contrast Alert) -->
+            <div
+              class="flex flex-col rounded-xl border border-red-200 dark:border-red-900/50 bg-white dark:bg-[#1e2532] shadow-sm overflow-hidden relative"
+            >
+              <!-- Alert Strip -->
+              <div class="absolute top-0 left-0 w-1.5 h-full bg-red-500"></div>
+              <div
+                class="flex items-center justify-between border-b border-red-100 dark:border-red-900/30 p-5 bg-red-50 dark:bg-red-900/10"
+              >
+                <h3
+                  class="font-bold text-red-700 dark:text-red-400 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined">warning</span>
+                  Library Status
+                </h3>
+                <span
+                  class="rounded-full bg-red-100 dark:bg-red-900/40 px-2.5 py-0.5 text-xs font-bold text-red-700 dark:text-red-300"
+                  >BLOCKED</span
+                >
+              </div>
+              <div class="p-5 flex flex-col gap-4 flex-1 justify-center">
+                <div class="text-center space-y-2">
+                  <p
+                    class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                  >
+                    Outstanding Fines
+                  </p>
+                  <p class="text-4xl font-black text-red-600 dark:text-red-500">
+                    $15.50
+                  </p>
+                  <p
+                    class="text-sm text-red-600/80 dark:text-red-400 font-medium"
+                  >
+                    Please clear fines to borrow books.
+                  </p>
+                </div>
+                <div
+                  class="mt-4 rounded-lg bg-slate-50 dark:bg-slate-800 p-3 text-sm text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-700"
+                >
+                  <div class="flex items-start gap-2">
+                    <span
+                      class="material-symbols-outlined text-base text-slate-400 mt-0.5"
+                      >book</span
+                    >
+                    <div>
+                      <p class="font-semibold">Overdue Item:</p>
+                      <p class="text-xs">"Intro to Algorithms" (Due: Oct 12)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-auto p-4 pt-0">
+                <button
+                  class="w-full rounded bg-red-600 hover:bg-red-700 text-white py-2 text-sm font-bold shadow-md transition-colors"
+                >
+                  Pay Fines Now
+                </button>
+              </div>
+            </div>
+            <!-- Finance Summary Card -->
+            <div
+              class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1e2532] shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+            >
+              <div
+                class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700/50 p-5 bg-slate-50/50 dark:bg-white/5"
+              >
+                <h3 class="font-bold text-slate-900 dark:text-white">
+                  Finance Summary
+                </h3>
+                <span class="material-symbols-outlined text-slate-400"
+                  >payments</span
+                >
+              </div>
+              <div class="p-5 flex flex-col gap-6">
+                <div>
+                  <p
+                    class="text-sm font-medium text-slate-500 dark:text-slate-400"
+                  >
+                    Total Paid (This Year)
+                  </p>
+                  <p
+                    class="text-4xl font-black text-slate-900 dark:text-white tracking-tight"
+                  >
+                    $12,500
+                  </p>
+                </div>
+                <div class="space-y-3">
+                  <p
+                    class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500"
+                  >
+                    Recent Payments
+                  </p>
+                  <div
+                    class="overflow-hidden rounded-lg border border-slate-100 dark:border-slate-700"
+                  >
+                    <table class="w-full text-left text-sm">
+                      <thead
+                        class="bg-slate-50 dark:bg-slate-800 text-xs text-slate-500 dark:text-slate-400"
+                      >
+                        <tr>
+                          <th class="px-3 py-2 font-medium">Date</th>
+                          <th class="px-3 py-2 font-medium">Item</th>
+                          <th class="px-3 py-2 font-medium text-right">Amt</th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="divide-y divide-slate-100 dark:divide-slate-700 bg-white dark:bg-slate-900/50"
+                      >
+                        <tr>
+                          <td
+                            class="px-3 py-2 text-slate-600 dark:text-slate-400"
+                          >
+                            Oct 01
+                          </td>
+                          <td
+                            class="px-3 py-2 text-slate-900 dark:text-slate-200 font-medium"
+                          >
+                            Tuition
+                          </td>
+                          <td
+                            class="px-3 py-2 text-right text-slate-900 dark:text-slate-200"
+                          >
+                            $500
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="px-3 py-2 text-slate-600 dark:text-slate-400"
+                          >
+                            Sep 15
+                          </td>
+                          <td
+                            class="px-3 py-2 text-slate-900 dark:text-slate-200 font-medium"
+                          >
+                            Lab Fee
+                          </td>
+                          <td
+                            class="px-3 py-2 text-right text-slate-900 dark:text-slate-200"
+                          >
+                            $150
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-auto border-t border-slate-100 dark:border-slate-700/50 bg-slate-50 dark:bg-white/5 p-3 text-center"
+              >
+                <a
+                  class="text-sm font-medium text-primary hover:underline"
+                  href="#"
+                  >View Statement</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- System Status Footer -->
+          <div
+            class="mt-8 rounded-lg bg-white dark:bg-[#1e2532] border border-slate-200 dark:border-slate-800 p-6"
+          >
+            <h3
+              class="text-slate-900 dark:text-white text-lg font-bold mb-4 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-slate-400">hub</span>
+              System Integrations
+            </h3>
+            <div class="flex flex-wrap gap-8">
+              <!-- Status Item -->
+              <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+                  ></span>
+                </span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Student API
+                  </p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Operational
+                  </p>
+                </div>
+              </div>
+              <!-- Status Item -->
+              <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+                  ></span>
+                </span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Library API
+                  </p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Connected
+                  </p>
+                </div>
+              </div>
+              <!-- Status Item -->
+              <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+                  ></span>
+                </span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Payment Gateway
+                  </p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Secure Link Active
+                  </p>
+                </div>
+              </div>
+              <!-- Status Item (Example of different status) -->
+              <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"
+                  ></span>
+                </span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    LMS Moodle
+                  </p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Maintenance Mode
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

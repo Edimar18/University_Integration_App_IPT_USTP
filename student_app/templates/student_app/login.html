@@ -1,0 +1,268 @@
+{% load static %}
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LOGIN</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#800000", // Maroon
+              "primary-hover": "#600000", // Darker Maroon for hover
+              secondary: "#FFD700", // Gold
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased h-screen w-screen overflow-hidden"
+  >
+    <div class="flex h-full w-full">
+      <div
+        class="hidden lg:flex relative w-1/2 h-full bg-slate-900 items-center justify-center overflow-hidden"
+      >
+        <img
+          alt="University campus buildings with green trees and students walking"
+          class="absolute inset-0 h-full w-full object-cover"
+          data-alt="University campus buildings with green trees and students walking"
+          src="{% static 'student_app/images/background.png' %}"
+        />
+        <div class="absolute inset-0 bg-primary/90 mix-blend-multiply"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+        ></div>
+        <div
+          class="relative z-10 p-12 text-white flex flex-col items-start justify-between h-full w-full max-w-2xl"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded bg-secondary/90 backdrop-blur-sm text-primary shadow-lg"
+            >
+              <span class="material-symbols-outlined" style="font-size: 24px"
+                >school</span
+              >
+            </div>
+            <span class="text-xl font-bold tracking-wide text-white"
+              >AB Normal College</span
+            >
+          </div>
+          <div class="mb-12">
+            <h2 class="text-4xl font-bold leading-tight mb-4">
+              Welcome to the University<br />of the POGI
+            </h2>
+            <p class="text-lg text-white/90 max-w-md">
+              Access your courses, grades, and library resources all in one
+              secure place.
+            </p>
+          </div>
+          <div class="text-sm text-white/60">
+            © 2026 AB Normal College. All rights reserved.
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-1/2 h-full flex flex-col bg-white dark:bg-background-dark overflow-y-auto"
+      >
+        <div
+          class="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-20 xl:px-24 py-12"
+        >
+          <div class="w-full max-w-[480px]">
+            <div class="flex lg:hidden items-center gap-2 mb-8">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded bg-primary text-secondary"
+              >
+                <span class="material-symbols-outlined" style="font-size: 20px"
+                  >school</span
+                >
+              </div>
+              <span class="text-lg font-bold text-slate-900 dark:text-white"
+                >AB Normal</span
+              >
+            </div>
+            <div class="mb-10">
+              <h1
+                class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white"
+              >
+                Sign in to AB Normal Student Hub
+              </h1>
+              <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                Please enter your credentials to access your dashboard.
+              </p>
+            </div>
+            <form action="{% url 'login' %}" class="space-y-6" method="POST">
+            {% csrf_token %}
+              <div>
+                <label
+                  class="block text-sm font-medium leading-6 text-slate-900 dark:text-white mb-2"
+                  for="student-id"
+                  >Student ID</label
+                >
+                <div class="relative rounded-lg shadow-sm">
+                  <div
+                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-400"
+                      style="font-size: 20px"
+                      >badge</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full rounded-lg border-0 py-3.5 pl-10 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary dark:bg-slate-800 dark:ring-slate-700 dark:text-white sm:text-sm sm:leading-6"
+                    id="student-id"
+                    name="student-id"
+                    placeholder="e.g. 202400123"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium leading-6 text-slate-900 dark:text-white mb-2"
+                  for="password"
+                  >Password</label
+                >
+                <div class="relative rounded-lg shadow-sm">
+                  <div
+                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-400"
+                      style="font-size: 20px"
+                      >lock</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full rounded-lg border-0 py-3.5 pl-10 pr-10 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary dark:bg-slate-800 dark:ring-slate-700 dark:text-white sm:text-sm sm:leading-6"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    type="password"
+                  />
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                      style="font-size: 20px"
+                    onclick="togglePasswordVisibility()"
+                      >visibility</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <input
+                    class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                  />
+                  <label
+                    class="ml-2 block text-sm text-slate-700 dark:text-slate-300"
+                    for="remember-me"
+                    >Remember me</label
+                  >
+                </div>
+                <div class="text-sm">
+                  <a
+                    class="font-medium text-primary hover:text-primary-hover underline decoration-transparent hover:decoration-current transition-all"
+                    href="#"
+                    >Forgot Password?</a
+                  >
+                </div>
+              </div>
+              <div>
+                <button
+                  class="flex w-full justify-center rounded-lg bg-primary px-3 py-3.5 text-base font-bold text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200"
+                  type="submit"
+                >
+                  Sign In
+                </button>
+              </div>
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-5" role="alert">
+                <strong class="font-bold">Ngeek</strong>
+                <span class="block sm:inline">{{ message }}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                </span>
+                </div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="relative mt-8">
+              <div
+                aria-hidden="true"
+                class="absolute inset-0 flex items-center"
+              >
+                <div
+                  class="w-full border-t border-slate-200 dark:border-slate-700"
+                ></div>
+              </div>
+              <div class="relative flex justify-center"></div>
+            </div>
+
+            <div
+              class="mt-12 flex justify-center gap-6 text-xs text-slate-400 dark:text-slate-500"
+            >
+              <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#"
+                >Privacy Policy</a
+              >
+              <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#"
+                >Terms of Service</a
+              >
+              <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#"
+                >Help Center</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const visibilityIcon = passwordInput.nextElementSibling.querySelector('.material-symbols-outlined');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            visibilityIcon.textContent = 'visibility_off';
+        } else {
+            passwordInput.type = 'password';
+            visibilityIcon.textContent = 'visibility';
+        }
+    }
+</script>

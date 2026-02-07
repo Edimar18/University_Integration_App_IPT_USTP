@@ -1,3 +1,5 @@
 from django.contrib import admin
+from library_app.models import LibraryRecord
 
-# Register your models here.
+admin.site.register(LibraryRecord)
+
