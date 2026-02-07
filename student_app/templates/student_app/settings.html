@@ -1,0 +1,331 @@
+{% extends 'student_app/base.html' %}
+{% block content %}
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-8 lg:px-12">
+          <div class="max-w-4xl mx-auto space-y-8">
+            <div>
+              <h1 class="text-2xl font-bold text-slate-900 dark:text-white">
+                Account Settings
+              </h1>
+              <p class="text-slate-500 dark:text-slate-400">
+                Manage your profile and college hub preferences.
+              </p>
+            </div>
+            <!-- Profile Information Section -->
+            <section
+              class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden"
+            >
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+                <h2 class="text-lg font-semibold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >account_circle</span
+                  >
+                  Profile Information
+                </h2>
+              </div>
+              <div class="p-6 space-y-6">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                  <div class="relative group">
+                    <div
+                      class="w-32 h-32 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center overflow-hidden border-2 border-slate-100 dark:border-slate-700"
+                      data-alt="Professional student profile headshot photo"
+                      style="
+                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD6e9q53W8vCCGVuTC33i3Ecz2v9KzKp9rfJh3-5kmBvyQKq7zV6SR_LM6m18iCUsMyWtBkpWhKciklvNx3v6zF-RXPAv_WPOSpK2V6lquBFkBpecfWB_w0OnuBkpB6GQn9D1kuCAu5hOHuZmZErlwh7omF0XL0HKl5CKIo2Tvgq1YGvXGbnhlp3FC_82ZiyixGZV7eaM7o2dCm4HKYHrYksRYuIrlPXZyEBIHs4x5j5zX-lIyoDq0L_3c6-Pj0A9DRwZAz-GvIl_8T&quot;);
+                        background-size: cover;
+                      "
+                    ></div>
+                    <button
+                      class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white dark:border-slate-900 hover:scale-105 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >edit</span
+                      >
+                    </button>
+                  </div>
+                  <div
+                    class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
+                  >
+                    <div class="space-y-2">
+                      <label
+                        class="text-sm font-medium text-slate-700 dark:text-slate-300"
+                        >Preferred Name</label
+                      >
+                      <input
+                        class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                        type="text"
+                        value="John Doe"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label
+                        class="text-sm font-medium text-slate-700 dark:text-slate-300"
+                        >Student Email</label
+                      >
+                      <input
+                        class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                        type="email"
+                        value="j.doe@anc.edu.ph"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label
+                        class="text-sm font-medium text-slate-700 dark:text-slate-300"
+                        >Phone Number</label
+                      >
+                      <input
+                        class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                        type="tel"
+                        value="+63 912 345 6789"
+                      />
+                    </div>
+                    <div class="space-y-2 flex items-end">
+                      <button
+                        class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors shadow-sm"
+                      >
+                        Update Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Security Section -->
+            <section
+              class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+            >
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+                <h2 class="text-lg font-semibold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >verified_user</span
+                  >
+                  Security
+                </h2>
+              </div>
+              <div class="p-6 space-y-4">
+                <div
+                  class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/40 rounded-lg border border-slate-100 dark:border-slate-800"
+                >
+                  <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-slate-400"
+                      >key</span
+                    >
+                    <div>
+                      <p class="text-sm font-semibold">Change Password</p>
+                      <p class="text-xs text-slate-500">
+                        Last changed 3 months ago
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="text-primary text-sm font-semibold hover:underline"
+                  >
+                    Update
+                  </button>
+                </div>
+                <div
+                  class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/40 rounded-lg border border-slate-100 dark:border-slate-800"
+                >
+                  <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-slate-400"
+                      >phonelink_lock</span
+                    >
+                    <div>
+                      <p class="text-sm font-semibold">
+                        Two-Factor Authentication (2FA)
+                      </p>
+                      <p class="text-xs text-slate-500">
+                        Add an extra layer of security to your hub account.
+                      </p>
+                    </div>
+                  </div>
+                  <label
+                    class="relative inline-flex items-center cursor-pointer"
+                  >
+                    <input
+                      checked=""
+                      class="sr-only peer"
+                      type="checkbox"
+                      value=""
+                    />
+                    <div
+                      class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+                    ></div>
+                  </label>
+                </div>
+              </div>
+            </section>
+            <!-- System Integrations Section -->
+            <section
+              class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+            >
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+                <h2 class="text-lg font-semibold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >sync_alt</span
+                  >
+                  System Integrations
+                </h2>
+              </div>
+              <div class="p-6 space-y-4">
+                <div
+                  class="flex items-center justify-between py-3 border-b border-slate-100 dark:border-slate-800 last:border-0"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined">database</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold">
+                        Student Information System (SIS)
+                      </p>
+                      <span
+                        class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 uppercase"
+                        >Synced</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold transition-all"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >refresh</span
+                    >
+                    Re-sync Data
+                  </button>
+                </div>
+                <div
+                  class="flex items-center justify-between py-3 border-b border-slate-100 dark:border-slate-800 last:border-0"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined"
+                        >library_books</span
+                      >
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold">
+                        Library Management System
+                      </p>
+                      <span
+                        class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 uppercase"
+                        >Synced</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold transition-all"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >refresh</span
+                    >
+                    Re-sync Data
+                  </button>
+                </div>
+                <div
+                  class="flex items-center justify-between py-3 border-b border-slate-100 dark:border-slate-800 last:border-0"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined">payments</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold">
+                        Payment Gateway (E-Wallet)
+                      </p>
+                      <span
+                        class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 uppercase"
+                        >Attention Required</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-sm">link</span>
+                    Connect API
+                  </button>
+                </div>
+              </div>
+            </section>
+            <!-- Theme Preferences Section -->
+            <section
+              class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm mb-12"
+            >
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+                <h2 class="text-lg font-semibold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >palette</span
+                  >
+                  Theme Preferences
+                </h2>
+              </div>
+              <div class="p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <button
+                    class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-primary bg-slate-50 dark:bg-slate-800 ring-4 ring-primary/10"
+                  >
+                    <span
+                      class="material-symbols-outlined text-3xl text-primary"
+                      >light_mode</span
+                    >
+                    <div class="text-center">
+                      <p class="text-sm font-bold">Light Mode</p>
+                      <p
+                        class="text-[10px] text-slate-500 uppercase font-medium"
+                      >
+                        Default
+                      </p>
+                    </div>
+                  </button>
+                  <button
+                    class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all"
+                  >
+                    <span
+                      class="material-symbols-outlined text-3xl text-slate-400"
+                      >dark_mode</span
+                    >
+                    <div class="text-center">
+                      <p
+                        class="text-sm font-bold text-slate-600 dark:text-slate-300"
+                      >
+                        Dark Mode
+                      </p>
+                      <p
+                        class="text-[10px] text-slate-500 uppercase font-medium"
+                      >
+                        Night Owl
+                      </p>
+                    </div>
+                  </button>
+                  <button
+                    class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all"
+                  >
+                    <span
+                      class="material-symbols-outlined text-3xl text-slate-400"
+                      >visibility</span
+                    >
+                    <div class="text-center">
+                      <p
+                        class="text-sm font-bold text-slate-600 dark:text-slate-300"
+                      >
+                        High Contrast
+                      </p>
+                      <p
+                        class="text-[10px] text-slate-500 uppercase font-medium"
+                      >
+                        Accessibility
+                      </p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+ {% endblock %}

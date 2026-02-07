@@ -1,0 +1,409 @@
+{% extends 'student_app/base.html' %}
+{% load static %}
+{% block content %}
+
+      <!-- Main Content Area -->
+      <main
+        class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative px-8"
+      >
+        
+        <!-- Scrollable Body -->
+        <div class="flex-1 overflow-y-auto p-8 space-y-8">
+          <!-- Search & Status Section -->
+          <div
+            class="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between"
+          >
+            <!-- Search & Filters -->
+            <div class="flex flex-col gap-4 w-full lg:w-2/3">
+              <div class="relative w-full">
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-[#896168]"
+                >
+                  <span class="material-symbols-outlined">search</span>
+                </div>
+                <input
+                  class="w-full h-12 rounded-xl border-none bg-white dark:bg-[#1e1e1e] text-[#181112] dark:text-white pl-12 pr-4 shadow-sm placeholder-[#896168] focus:ring-2 focus:ring-primary/50"
+                  placeholder="Search for books, articles, and journals..."
+                  type="text"
+                />
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  class="px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium transition shadow-md"
+                >
+                  All
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-white dark:bg-[#1e1e1e] text-[#181112] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 border border-[#e6dbdd] dark:border-white/10 text-sm font-medium transition"
+                >
+                  Books
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-white dark:bg-[#1e1e1e] text-[#181112] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 border border-[#e6dbdd] dark:border-white/10 text-sm font-medium transition"
+                >
+                  Articles
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-white dark:bg-[#1e1e1e] text-[#181112] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 border border-[#e6dbdd] dark:border-white/10 text-sm font-medium transition"
+                >
+                  Journals
+                </button>
+              </div>
+            </div>
+            <!-- Account Status Card -->
+            <div
+              class="flex w-full lg:w-auto min-w-[280px] flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1e1e1e] shadow-sm border-l-4 border-primary"
+            >
+              <div class="flex justify-between items-center">
+                <p
+                  class="text-[#896168] dark:text-gray-400 text-sm font-medium uppercase tracking-wide"
+                >
+                  Account Status
+                </p>
+                <span class="material-symbols-outlined text-primary"
+                  >block</span
+                >
+              </div>
+              <p class="text-primary text-2xl font-bold leading-tight">
+                Blocked
+              </p>
+              <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                Please resolve outstanding fines.
+              </p>
+            </div>
+          </div>
+          <!-- Two Column Layout for Main Content -->
+          <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <!-- Left Column: Currently Borrowed (Span 2) -->
+            <div class="xl:col-span-2 flex flex-col gap-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-[#181112] dark:text-white">
+                  Currently Borrowed
+                </h3>
+                <a
+                  class="text-sm text-primary font-medium hover:underline"
+                  href="#"
+                  >View all history</a
+                >
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Book Card 1 -->
+                <div
+                  class="group flex flex-col bg-white dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#e6dbdd] dark:border-white/5"
+                >
+                  <div class="h-48 w-full bg-gray-200 overflow-hidden relative">
+                    <div
+                      class="absolute top-3 right-3 bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300 px-2 py-1 rounded text-xs font-bold border border-red-200 dark:border-red-800"
+                    >
+                      Overdue
+                    </div>
+                    <img
+                      alt="Book cover for Introduction to UX Design"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Cover of the book Introduction to UX Design"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVVM68eBqsHhH9KmXKtcljNUC3RmPIYuPkR-HUwsdX2YAymtzYetwkAMCadwISi0VjJLz3NEVTuunphwLA4gjA-CAE5174umBMmbNCeMY3344EdNTylng4stlxJk_bzM-17dQJ5ooj4mJX5lf6kgo6aGnrW6v5ZoMudsE346a69-IDggjM6keZJiQGvIwQExrO1A48ZaIfABLdkOs0bZw4ICLYXgANb2IgLxoi1_HDHAcqtap6jg0elk35KfWqPrJlCWfsjh0Cmdrh"
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h4
+                      class="font-bold text-lg dark:text-gray-100 line-clamp-1"
+                      title="Introduction to UX Design"
+                    >
+                      Intro to UX Design
+                    </h4>
+                    <p class="text-sm text-[#896168] dark:text-gray-400">
+                      J. Smith &amp; A. Doe
+                    </p>
+                    <div
+                      class="mt-auto pt-4 flex items-center gap-2 text-primary font-medium text-sm"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >warning</span
+                      >
+                      <span>Due: 5 days ago</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Book Card 2 -->
+                <div
+                  class="group flex flex-col bg-white dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#e6dbdd] dark:border-white/5"
+                >
+                  <div class="h-48 w-full bg-gray-200 overflow-hidden relative">
+                    <div
+                      class="absolute top-3 right-3 bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 px-2 py-1 rounded text-xs font-bold border border-yellow-200 dark:border-yellow-800"
+                    >
+                      Due Soon
+                    </div>
+                    <img
+                      alt="Book cover for Modern Economics"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Cover of the book Modern Economics Principles"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_mB5M04NY4OHj88q1qUCybRCmY-pcZF7wNpZv83wrufe-DDjEyfyBmBxIrdzI_g9cMdqvhJs0vBMHTfT7LNWmSQk42K1ojgLCy1qDRGtw_Hz7By3G7unjpbKVU4-lVrEfdFK54ZEr0PqtIIgI_ZyYKTvrEKQsr2fvm6Ptr0X2lmDgsFCeq_o3GWxhtEOJibPz5P2CRKAEkJXkHpGvxU60LbP5Quo6VKN2vKOHnzRFSTkaK4PMtJFlZg7gefnMJrfwYmxYNkBUAB6c"
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h4
+                      class="font-bold text-lg dark:text-gray-100 line-clamp-1"
+                    >
+                      Modern Economics
+                    </h4>
+                    <p class="text-sm text-[#896168] dark:text-gray-400">
+                      P. Krugman
+                    </p>
+                    <div
+                      class="mt-auto pt-4 flex items-center gap-2 text-yellow-700 dark:text-yellow-500 font-medium text-sm"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >schedule</span
+                      >
+                      <span>Due: in 2 days</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Book Card 3 -->
+                <div
+                  class="group flex flex-col bg-white dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-[#e6dbdd] dark:border-white/5"
+                >
+                  <div class="h-48 w-full bg-gray-200 overflow-hidden relative">
+                    <img
+                      alt="Book cover for Data Structures"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Cover of the book Data Structures and Algorithms"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp6A6jVBCDKtCHygUcDD0_NzQIgOVezx8Iu6sQjUVLTHT5XrcBubPebp3myFJGqoDAKwwk5TYVO9zuxOWScv3EqbFhMoSedpsmALdp1Dyi8Yiqt7Suy-A93A3fRHPaFV2HJF0lhV3SAPCkJ63PTC0HKUT6dgvenO5ln-9ALOvG39nxBDEfkkCHKmdUSC4WepZvz1Rrv0Fy3-hYylRl1ilu39eqSN5lfVP7NkuUzOuIlpeofww4bUFCRBcS2BRrGGIhri3ozpwMCA4q"
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h4
+                      class="font-bold text-lg dark:text-gray-100 line-clamp-1"
+                    >
+                      Data Structures
+                    </h4>
+                    <p class="text-sm text-[#896168] dark:text-gray-400">
+                      T. Cormen
+                    </p>
+                    <div
+                      class="mt-auto pt-4 flex items-center gap-2 text-green-700 dark:text-green-500 font-medium text-sm"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >check_circle</span
+                      >
+                      <span>Due: in 14 days</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right Column: Fines & Fees (Span 1) -->
+            <div class="flex flex-col gap-6">
+              <h3 class="text-xl font-bold text-[#181112] dark:text-white">
+                Fines &amp; Fees
+              </h3>
+              <div
+                class="flex flex-col rounded-xl bg-white dark:bg-[#1e1e1e] border border-red-100 dark:border-red-900/30 overflow-hidden shadow-md"
+              >
+                <div
+                  class="p-6 bg-gradient-to-br from-red-50 to-white dark:from-red-900/20 dark:to-[#1e1e1e] border-b border-red-100 dark:border-red-900/30"
+                >
+                  <p
+                    class="text-[#896168] dark:text-red-300 font-medium text-sm mb-1"
+                  >
+                    Total Outstanding
+                  </p>
+                  <p class="text-4xl font-bold text-primary">$25.00</p>
+                </div>
+                <div class="p-6 flex flex-col gap-4">
+                  <p
+                    class="text-xs uppercase tracking-wider font-semibold text-[#896168] dark:text-gray-500"
+                  >
+                    Breakdown
+                  </p>
+                  <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-[20px] shrink-0"
+                        >error</span
+                      >
+                      <div>
+                        <p class="font-medium dark:text-gray-200">
+                          Intro to UX Design
+                        </p>
+                        <p class="text-xs text-red-600 dark:text-red-400">
+                          5 days overdue • $5.00/day
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <button
+                    class="mt-4 w-full py-3 rounded-lg bg-primary hover:bg-[#b00e2a] text-white font-semibold shadow-lg shadow-red-200 dark:shadow-none transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined">payments</span>
+                    Pay Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Recommendations Section -->
+          <div class="flex flex-col gap-6 pb-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-[#181112] dark:text-white">
+                Library Recommendations
+              </h3>
+              <div class="flex gap-2">
+                <button
+                  class="size-8 rounded-full border border-[#e6dbdd] dark:border-white/20 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 text-[#181112] dark:text-white transition"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="size-8 rounded-full border border-[#e6dbdd] dark:border-white/20 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 text-[#181112] dark:text-white transition"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div class="flex gap-5 overflow-x-auto pb-4 snap-x">
+              <!-- Rec Card 1 -->
+              <div
+                class="snap-start min-w-[200px] w-[200px] flex flex-col gap-2 group cursor-pointer"
+              >
+                <div
+                  class="w-full aspect-[2/3] rounded-lg overflow-hidden relative shadow-sm group-hover:shadow-md transition-all"
+                >
+                  <img
+                    alt="Cover of Design Systems"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    data-alt="Cover of the book Design Systems"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxfnUk9PsDiEqId6gzTFBlSnn2gs7Ldp6GjDWFiYAjmTr0otkgSXb5ZzUC-2KrcI2A9xYkHU6koSnuyZfFtu2tk742bLY2ys7S_omfik7BvFwJ1s6WucEik_uQac-UdlrCGxIR2y5ahqikLnfxuHLtwvO6emjxcK-l21GxhsxjJdhfBMgKeOtwthKq6v3Xzv230q4E3F4KlN8yp_7oZO_ffdPxYITJgL0IjUFbxxUwQbuMaKu1KmrW1bYXJh23liJtK_WFGDNr-LHm"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <h5
+                    class="font-bold text-sm dark:text-gray-100 leading-tight"
+                  >
+                    Design Systems
+                  </h5>
+                  <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                    Alla Kholmatova
+                  </p>
+                </div>
+              </div>
+              <!-- Rec Card 2 -->
+              <div
+                class="snap-start min-w-[200px] w-[200px] flex flex-col gap-2 group cursor-pointer"
+              >
+                <div
+                  class="w-full aspect-[2/3] rounded-lg overflow-hidden relative shadow-sm group-hover:shadow-md transition-all"
+                >
+                  <img
+                    alt="Cover of CSS Secrets"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    data-alt="Cover of the book CSS Secrets"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_0HYCaES8IMtaiYz8QlNcTvmeWQ98xNEPBDMgH3Jk-_USkxvIkP6noBoy3SxgoF8JWQGjM40ZmF2dHGKiJ_FrEtJk9hqfY3vr5-Tz8LrfPPl9vicpujtkKUSO77CsUsQ6sOqflUfoeAx3SAkiBhN75g_CoiyvARblGjJVUuuFx2nhTV55dpPWc8fZ9HR8oL02cvgn2s_VQqROtNm8CYcG8lvq8C_QVDNFXD1qT_NtdPmmRTPmcyDmcM27ghPre7fYEwWETNGmMjN5"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <h5
+                    class="font-bold text-sm dark:text-gray-100 leading-tight"
+                  >
+                    CSS Secrets
+                  </h5>
+                  <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                    Lea Verou
+                  </p>
+                </div>
+              </div>
+              <!-- Rec Card 3 -->
+              <div
+                class="snap-start min-w-[200px] w-[200px] flex flex-col gap-2 group cursor-pointer"
+              >
+                <div
+                  class="w-full aspect-[2/3] rounded-lg overflow-hidden relative shadow-sm group-hover:shadow-md transition-all"
+                >
+                  <img
+                    alt="Cover of Thinking Fast and Slow"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    data-alt="Cover of the book Thinking Fast and Slow"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P-rU1mbYan5uva2a56LMiEZeODoTRFb0GYYSJi5apDWPYRKZPrfl45p7HbIggcxQZWoZddGMM4tnt9Xg-PPbzJH0Lee2gze5avg8Z4Kj2-TlYXGls9XcaUdtc3e5vTyavUW2eORTiI6uK5BqRVnNLZzeCW7fwiyGAMIFUQ62NWw4OLDEuSebTs2sSyME6nE2YqWrUYDEv5CeU5NAewonSU4tb6-dV6fK-0TsQxmVCAjodn0FUSbdtmT3OZFOCQ5Pky7QuvpcSQxe"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <h5
+                    class="font-bold text-sm dark:text-gray-100 leading-tight"
+                  >
+                    Thinking, Fast and Slow
+                  </h5>
+                  <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                    Daniel Kahneman
+                  </p>
+                </div>
+              </div>
+              <!-- Rec Card 4 -->
+              <div
+                class="snap-start min-w-[200px] w-[200px] flex flex-col gap-2 group cursor-pointer"
+              >
+                <div
+                  class="w-full aspect-[2/3] rounded-lg overflow-hidden relative shadow-sm group-hover:shadow-md transition-all"
+                >
+                  <img
+                    alt="Cover of Digital Marketing"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    data-alt="Cover of the book Digital Marketing Strategy"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwm4lORoBZ8jfpxUPUt5N0d7kOGa5XEmH2QkIxlhOuHzod4R7PR6wdJFoUrW9qDMNIy5iXvbXcttt8S0u0Oc1qYusCfo-fpGcB1359lU4X1DRjzVI1deYDZu4IhX77UT2VgA77TLqloTpJxUEkcLFT8Tt7Guxo4LOm7pkc9hX27_J6P-ExrHqwNnkwij8-DWmr_9O4fv9LjjjUl3E2AzQJTJMHvsesWdm8xEaPJxKuM9rn6WuQq__NvnaFCp2JrWGV4dHWRdHVIoIm"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <h5
+                    class="font-bold text-sm dark:text-gray-100 leading-tight"
+                  >
+                    Digital Marketing
+                  </h5>
+                  <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                    Simon Kingsnorth
+                  </p>
+                </div>
+              </div>
+              <!-- Rec Card 5 -->
+              <div
+                class="snap-start min-w-[200px] w-[200px] flex flex-col gap-2 group cursor-pointer"
+              >
+                <div
+                  class="w-full aspect-[2/3] rounded-lg overflow-hidden relative shadow-sm group-hover:shadow-md transition-all bg-gray-100 dark:bg-white/5 flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-4xl text-[#896168]"
+                    >arrow_forward</span
+                  >
+                </div>
+                <div>
+                  <h5
+                    class="font-bold text-sm dark:text-gray-100 leading-tight"
+                  >
+                    View More
+                  </h5>
+                  <p class="text-xs text-[#896168] dark:text-gray-400 mt-1">
+                    Browse Category
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+{% endblock %}

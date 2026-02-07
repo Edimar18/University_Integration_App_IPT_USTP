@@ -1,0 +1,604 @@
+{% extends 'student_app/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Main Content Area -->
+<main class="flex flex-col flex-1 gap-8 min-w-0 px-8 pt-5">
+<!-- Header Section -->
+<div class="flex flex-col gap-6">
+    <div>
+    <h1
+        class="text-3xl font-black tracking-tight text-[#181112] dark:text-white"
+    >
+        Academic Profile &amp; Grades
+    </h1>
+    <p class="text-[#896168] dark:text-gray-400 mt-1">
+        Manage your academic records and view performance.
+    </p>
+    </div>
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div
+        class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm flex flex-col justify-between"
+    >
+        <div class="flex items-start justify-between">
+        <span
+            class="text-sm font-medium text-[#896168] dark:text-gray-400"
+            >Current GPA</span
+        >
+        <span
+            class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-[20px]"
+            >analytics</span
+        >
+        </div>
+        <div class="mt-4 flex items-baseline gap-2">
+        <span class="text-3xl font-bold text-[#181112] dark:text-white"
+            >3.82</span
+        >
+        <span
+            class="text-xs font-medium text-green-600 flex items-center"
+        >
+            <span class="material-symbols-outlined text-[16px]"
+            >trending_up</span
+            >
+            +0.04
+        </span>
+        </div>
+    </div>
+    <div
+        class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm flex flex-col justify-between"
+    >
+        <div class="flex items-start justify-between">
+        <span
+            class="text-sm font-medium text-[#896168] dark:text-gray-400"
+            >Credits Earned</span
+        >
+        <span
+            class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-[20px]"
+            >school</span
+        >
+        </div>
+        <div class="mt-4">
+        <div class="flex items-baseline justify-between mb-2">
+            <span
+            class="text-3xl font-bold text-[#181112] dark:text-white"
+            >94<span
+                class="text-lg text-[#896168] dark:text-gray-500 font-medium"
+                >/120</span
+            ></span
+            >
+            <span class="text-xs font-medium text-[#896168]">78%</span>
+        </div>
+        <div
+            class="w-full bg-[#f4f0f1] dark:bg-gray-800 rounded-full h-2"
+        >
+            <div
+            class="bg-primary h-2 rounded-full"
+            style="width: 78%"
+            ></div>
+        </div>
+        </div>
+    </div>
+    <div
+        class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm flex flex-col justify-between"
+    >
+        <div class="flex items-start justify-between">
+        <span
+            class="text-sm font-medium text-[#896168] dark:text-gray-400"
+            >Academic Standing</span
+        >
+        <span
+            class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-lg text-[20px]"
+            >verified</span
+        >
+        </div>
+        <div class="mt-4 flex items-center gap-3">
+        <span class="text-3xl font-bold text-[#181112] dark:text-white"
+            >Good</span
+        >
+        <div
+            class="px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wide"
+        >
+            Active
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+    <!-- Center Column: Tables -->
+    <div class="xl:col-span-2 flex flex-col gap-8">
+    <!-- Current Semester Grades -->
+    <div
+        class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm overflow-hidden"
+    >
+        <div
+        class="px-6 py-4 border-b border-[#e6dbdd] dark:border-gray-700 flex items-center justify-between bg-white dark:bg-surface-dark"
+        >
+        <h3 class="text-lg font-bold text-[#181112] dark:text-white">
+            Current Semester Grades
+        </h3>
+        <button
+            class="text-xs font-medium text-primary hover:text-primary-dark"
+        >
+            Download Report
+        </button>
+        </div>
+        <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+            <thead
+            class="bg-[#fcfafa] dark:bg-gray-800/50 text-[#896168] dark:text-gray-400 font-medium border-b border-[#e6dbdd] dark:border-gray-700"
+            >
+            <tr>
+                <th class="px-6 py-3">Code</th>
+                <th class="px-6 py-3">Course Name</th>
+                <th class="px-6 py-3">Credits</th>
+                <th class="px-6 py-3">Grade</th>
+                <th class="px-6 py-3 w-1/4">Progress</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-[#e6dbdd] dark:divide-gray-800">
+            <tr
+                class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+            >
+                <td
+                class="px-6 py-4 font-semibold text-[#181112] dark:text-white"
+                >
+                CS 305
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                Data Structures
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                4.0
+                </td>
+                <td class="px-6 py-4 font-bold text-primary">A</td>
+                <td class="px-6 py-4">
+                <div class="flex items-center gap-2">
+                    <div
+                    class="flex-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-full h-1.5"
+                    >
+                    <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 85%"
+                    ></div>
+                    </div>
+                    <span class="text-xs text-[#896168]">85%</span>
+                </div>
+                </td>
+            </tr>
+            <tr
+                class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+            >
+                <td
+                class="px-6 py-4 font-semibold text-[#181112] dark:text-white"
+                >
+                MATH 220
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                Linear Algebra
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                3.0
+                </td>
+                <td class="px-6 py-4 font-bold text-primary">B+</td>
+                <td class="px-6 py-4">
+                <div class="flex items-center gap-2">
+                    <div
+                    class="flex-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-full h-1.5"
+                    >
+                    <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 70%"
+                    ></div>
+                    </div>
+                    <span class="text-xs text-[#896168]">70%</span>
+                </div>
+                </td>
+            </tr>
+            <tr
+                class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+            >
+                <td
+                class="px-6 py-4 font-semibold text-[#181112] dark:text-white"
+                >
+                ENG 102
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                Advanced Comp
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                3.0
+                </td>
+                <td class="px-6 py-4 font-bold text-primary">A-</td>
+                <td class="px-6 py-4">
+                <div class="flex items-center gap-2">
+                    <div
+                    class="flex-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-full h-1.5"
+                    >
+                    <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 92%"
+                    ></div>
+                    </div>
+                    <span class="text-xs text-[#896168]">92%</span>
+                </div>
+                </td>
+            </tr>
+            <tr
+                class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+            >
+                <td
+                class="px-6 py-4 font-semibold text-[#181112] dark:text-white"
+                >
+                HIST 150
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                World History
+                </td>
+                <td class="px-6 py-4 text-[#5e4a4e] dark:text-gray-300">
+                3.0
+                </td>
+                <td class="px-6 py-4 font-bold text-primary">A</td>
+                <td class="px-6 py-4">
+                <div class="flex items-center gap-2">
+                    <div
+                    class="flex-1 bg-[#f4f0f1] dark:bg-gray-800 rounded-full h-1.5"
+                    >
+                    <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 60%"
+                    ></div>
+                    </div>
+                    <span class="text-xs text-[#896168]">60%</span>
+                </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <!-- Transcript Overview -->
+    <div class="flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-[#181112] dark:text-white">
+            Transcript Overview
+        </h3>
+        <button
+            class="text-sm font-medium text-primary hover:text-primary-dark"
+        >
+            View Full Transcript
+        </button>
+        </div>
+        <!-- Accordion Item 1 -->
+        <details
+        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 overflow-hidden shadow-sm"
+        open=""
+        >
+        <summary
+            class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+            <div class="flex items-center gap-4">
+            <div
+                class="bg-primary/10 p-2 rounded-lg text-primary group-open:bg-primary group-open:text-white transition-colors"
+            >
+                <span
+                class="material-symbols-outlined text-[20px] block transition-transform group-open:rotate-180"
+                >expand_more</span
+                >
+            </div>
+            <div>
+                <h4 class="font-bold text-[#181112] dark:text-white">
+                Spring 2023
+                </h4>
+                <p class="text-xs text-[#896168] dark:text-gray-400">
+                15 Credits • GPA: 3.75
+                </p>
+            </div>
+            </div>
+            <div
+            class="hidden sm:block text-sm font-medium text-green-600 dark:text-green-400"
+            >
+            Dean's List
+            </div>
+        </summary>
+        <div class="p-4 border-t border-[#e6dbdd] dark:border-gray-700">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div
+                class="flex justify-between p-2 rounded bg-[#f8f6f6] dark:bg-gray-800"
+            >
+                <span class="font-medium">Intro to Psychology</span>
+                <span class="font-bold">A</span>
+            </div>
+            <div
+                class="flex justify-between p-2 rounded bg-[#f8f6f6] dark:bg-gray-800"
+            >
+                <span class="font-medium">Calculus I</span>
+                <span class="font-bold">B+</span>
+            </div>
+            <div
+                class="flex justify-between p-2 rounded bg-[#f8f6f6] dark:bg-gray-800"
+            >
+                <span class="font-medium">Intro to CS</span>
+                <span class="font-bold">A</span>
+            </div>
+            <div
+                class="flex justify-between p-2 rounded bg-[#f8f6f6] dark:bg-gray-800"
+            >
+                <span class="font-medium">Public Speaking</span>
+                <span class="font-bold">A-</span>
+            </div>
+            </div>
+        </div>
+        </details>
+        <!-- Accordion Item 2 -->
+        <details
+        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 overflow-hidden shadow-sm"
+        >
+        <summary
+            class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+            <div class="flex items-center gap-4">
+            <div
+                class="bg-primary/10 p-2 rounded-lg text-primary group-open:bg-primary group-open:text-white transition-colors"
+            >
+                <span
+                class="material-symbols-outlined text-[20px] block transition-transform group-open:rotate-180"
+                >expand_more</span
+                >
+            </div>
+            <div>
+                <h4 class="font-bold text-[#181112] dark:text-white">
+                Fall 2022
+                </h4>
+                <p class="text-xs text-[#896168] dark:text-gray-400">
+                14 Credits • GPA: 3.85
+                </p>
+            </div>
+            </div>
+        </summary>
+        <div class="p-4 border-t border-[#e6dbdd] dark:border-gray-700">
+            <p class="text-sm text-gray-500">
+            Course details for Fall 2022...
+            </p>
+        </div>
+        </details>
+        <!-- Accordion Item 3 -->
+        <details
+        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 overflow-hidden shadow-sm"
+        >
+        <summary
+            class="flex cursor-pointer items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+            <div class="flex items-center gap-4">
+            <div
+                class="bg-primary/10 p-2 rounded-lg text-primary group-open:bg-primary group-open:text-white transition-colors"
+            >
+                <span
+                class="material-symbols-outlined text-[20px] block transition-transform group-open:rotate-180"
+                >expand_more</span
+                >
+            </div>
+            <div>
+                <h4 class="font-bold text-[#181112] dark:text-white">
+                Spring 2022
+                </h4>
+                <p class="text-xs text-[#896168] dark:text-gray-400">
+                16 Credits • GPA: 3.90
+                </p>
+            </div>
+            </div>
+        </summary>
+        <div class="p-4 border-t border-[#e6dbdd] dark:border-gray-700">
+            <p class="text-sm text-gray-500">
+            Course details for Spring 2022...
+            </p>
+        </div>
+        </details>
+    </div>
+    </div>
+    <!-- Right Column: Charts & Extra Info -->
+    <div class="xl:col-span-1 flex flex-col gap-8">
+    <!-- GPA Trend Chart Card -->
+    <div
+        class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm p-6"
+    >
+        <div class="flex items-center justify-between mb-6">
+        <h3 class="text-lg font-bold text-[#181112] dark:text-white">
+            GPA Trend
+        </h3>
+        <div
+            class="p-1 rounded-md bg-[#f4f0f1] dark:bg-gray-800 flex text-xs font-medium"
+        >
+            <button
+            class="px-2 py-1 bg-white dark:bg-gray-700 rounded shadow-sm text-primary"
+            >
+            Term
+            </button>
+            <button class="px-2 py-1 text-[#896168] dark:text-gray-400">
+            Year
+            </button>
+        </div>
+        </div>
+        <!-- CSS/SVG Chart -->
+        <div class="relative h-64 w-full">
+        <!-- Y Axis Labels -->
+        <div
+            class="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-[#896168] dark:text-gray-500 font-medium"
+        >
+            <span>4.0</span>
+            <span>3.5</span>
+            <span>3.0</span>
+            <span>2.5</span>
+        </div>
+        <!-- Chart Area -->
+        <div class="absolute left-8 right-0 top-2 bottom-6">
+            <!-- Horizontal Grid Lines -->
+            <div class="w-full h-full flex flex-col justify-between">
+            <div
+                class="w-full h-px bg-gray-100 dark:bg-gray-800 border-t border-dashed border-gray-300 dark:border-gray-700"
+            ></div>
+            <div
+                class="w-full h-px bg-gray-100 dark:bg-gray-800 border-t border-dashed border-gray-300 dark:border-gray-700"
+            ></div>
+            <div
+                class="w-full h-px bg-gray-100 dark:bg-gray-800 border-t border-dashed border-gray-300 dark:border-gray-700"
+            ></div>
+            <div
+                class="w-full h-px bg-gray-100 dark:bg-gray-800 border-t border-dashed border-gray-300 dark:border-gray-700"
+            ></div>
+            </div>
+            <!-- The Line (SVG) -->
+            <svg
+            class="absolute inset-0 w-full h-full overflow-visible"
+            preserveaspectratio="none"
+            viewbox="0 0 100 100"
+            >
+            <!-- Line path: Points calculated roughly for 3.9, 3.85, 3.75, 3.82 mapped to 0-100 height -->
+            <path
+                class="drop-shadow-md"
+                d="M0,10 L33,15 L66,35 L100,25"
+                fill="none"
+                stroke="#d41132"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+            ></path>
+            <!-- Area under curve (gradient) -->
+            <defs>
+                <lineargradient
+                id="gradientArea"
+                x1="0"
+                x2="0"
+                y1="0"
+                y2="1"
+                >
+                <stop
+                    offset="0%"
+                    stop-color="#d41132"
+                    stop-opacity="0.2"
+                ></stop>
+                <stop
+                    offset="100%"
+                    stop-color="#d41132"
+                    stop-opacity="0"
+                ></stop>
+                </lineargradient>
+            </defs>
+            <path
+                d="M0,10 L33,15 L66,35 L100,25 L100,100 L0,100 Z"
+                fill="url(#gradientArea)"
+                stroke="none"
+            ></path>
+            <!-- Data Points -->
+            <circle
+                class="fill-white stroke-primary stroke-2"
+                cx="0"
+                cy="10"
+                r="3"
+            ></circle>
+            <circle
+                class="fill-white stroke-primary stroke-2"
+                cx="33"
+                cy="15"
+                r="3"
+            ></circle>
+            <circle
+                class="fill-white stroke-primary stroke-2"
+                cx="66"
+                cy="35"
+                r="3"
+            ></circle>
+            <circle
+                class="fill-white stroke-primary stroke-2"
+                cx="100"
+                cy="25"
+                r="3"
+            ></circle>
+            </svg>
+        </div>
+        <!-- X Axis Labels -->
+        <div
+            class="absolute left-8 right-0 bottom-0 flex justify-between text-xs text-[#896168] dark:text-gray-500 font-medium translate-x-[-10px] w-[110%]"
+        >
+            <span class="w-10 text-center">Sp 22</span>
+            <span class="w-10 text-center">Fa 22</span>
+            <span class="w-10 text-center">Sp 23</span>
+            <span class="w-10 text-center">Cur</span>
+        </div>
+        </div>
+        <div
+        class="mt-6 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex gap-3 items-start"
+        >
+        <span
+            class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-[20px] mt-0.5"
+            >info</span
+        >
+        <p
+            class="text-xs text-blue-800 dark:text-blue-300 leading-relaxed"
+        >
+            Your GPA is in the top <strong>15%</strong> of your class.
+            Keep up the good work to maintain Dean's List eligibility.
+        </p>
+        </div>
+    </div>
+    <!-- Upcoming Deadlines -->
+    <div
+        class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e6dbdd] dark:border-gray-700 shadow-sm p-6"
+    >
+        <h3 class="text-lg font-bold text-[#181112] dark:text-white mb-4">
+        Deadlines
+        </h3>
+        <div class="space-y-4">
+        <div class="flex gap-3 items-start">
+            <div
+            class="flex flex-col items-center bg-[#f4f0f1] dark:bg-gray-800 rounded-lg p-2 min-w-[50px]"
+            >
+            <span class="text-xs font-bold text-primary uppercase"
+                >Nov</span
+            >
+            <span
+                class="text-lg font-black text-[#181112] dark:text-white"
+                >15</span
+            >
+            </div>
+            <div>
+            <h4
+                class="font-bold text-sm text-[#181112] dark:text-white"
+            >
+                Withdrawal Deadline
+            </h4>
+            <p class="text-xs text-[#896168] dark:text-gray-400">
+                Last day to withdraw from full semester courses with a
+                'W'.
+            </p>
+            </div>
+        </div>
+        <div class="flex gap-3 items-start">
+            <div
+            class="flex flex-col items-center bg-[#f4f0f1] dark:bg-gray-800 rounded-lg p-2 min-w-[50px]"
+            >
+            <span class="text-xs font-bold text-primary uppercase"
+                >Dec</span
+            >
+            <span
+                class="text-lg font-black text-[#181112] dark:text-white"
+                >01</span
+            >
+            </div>
+            <div>
+            <h4
+                class="font-bold text-sm text-[#181112] dark:text-white"
+            >
+                Spring Registration
+            </h4>
+            <p class="text-xs text-[#896168] dark:text-gray-400">
+                Registration opens for Seniors.
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</main>
+{% endblock %}
