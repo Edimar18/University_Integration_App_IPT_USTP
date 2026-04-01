@@ -52,4 +52,8 @@ def finance(request):
 
 @login_required(login_url='login')
 def settings(request):
-    return render(request, 'student_app/settings.html')
+    context = {
+        "name" : request.user.username,
+        "email": request.user.email
+    }
+    return render(request, 'student_app/settings.html', context)
